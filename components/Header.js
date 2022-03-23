@@ -51,7 +51,6 @@ const solutions = [
   },
 ]
 
-// Changes
 const callsToAction = [
   { name: 'Watch Demo', href: '#', icon: PlayIcon },
   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
