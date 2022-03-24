@@ -15,84 +15,128 @@ import {
   XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import Link from 'next/link'
 
-const solutions = [
+const riskManagement = [
   {
-    name: 'Analytics',
+    name: 'Risk Management Overview',
     description:
       'Get a better understanding of where your traffic is coming from.',
-    href: '#',
+    href: '/risk-managemnet',
     icon: ChartBarIcon,
   },
   {
-    name: 'Engagement',
+    name: 'Business Risk',
     description: 'Speak directly to your customers in a more meaningful way.',
-    href: '#',
+    href: '/business-risk',
     icon: CursorClickIcon,
   },
   {
-    name: 'Security',
+    name: 'Safety & Loss Control',
     description: "Your customers' data will be safe and secure.",
-    href: '#',
+    href: '/safety-loss-control',
     icon: ShieldCheckIcon,
   },
   {
-    name: 'Integrations',
+    name: 'Claims Management',
     description: "Connect with third-party tools that you're already using.",
-    href: '#',
+    href: '/claims-management',
     icon: ViewGridIcon,
-  },
-  {
-    name: 'Automations',
-    description:
-      'Build strategic funnels that will drive your customers to convert',
-    href: '#',
-    icon: RefreshIcon,
   },
 ]
 
-// Changes
-const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-const resources = [
+const insurance = [
   {
-    name: 'Help Center',
+    name: 'Insurance Overview',
     description:
       'Get all of your questions answered in our forums or contact support.',
-    href: '#',
+    href: '/business-insurance',
     icon: SupportIcon,
   },
   {
-    name: 'Guides',
+    name: 'Property & Casualty',
     description:
       'Learn how to maximize our platform to get the most out of it.',
-    href: '#',
+    href: '/property-casualty',
     icon: BookmarkAltIcon,
   },
   {
-    name: 'Events',
+    name: 'Surety Bonds',
     description:
       'See what meet-ups and other events we might be planning near you.',
-    href: '#',
+    href: '/surety-bonds',
     icon: CalendarIcon,
   },
   {
-    name: 'Security',
+    name: 'Community Association Programs',
     description: 'Understand how we take your privacy seriously.',
-    href: '#',
+    href: '/community-associations-programs',
     icon: ShieldCheckIcon,
   },
 ]
-const recentPosts = [
-  { id: 1, name: 'Boost your conversion rate', href: '#' },
+const about = [
   {
-    id: 2,
-    name: 'How to use search engine optimization to drive traffic to your site',
-    href: '#',
+    name: 'About Guardify',
+    description:
+      'Get all of your questions answered in our forums or contact support.',
+    href: '/about',
+    icon: SupportIcon,
   },
-  { id: 3, name: 'Improve your customer experience', href: '#' },
+  {
+    name: 'Culture & Community',
+    description:
+      'Learn how to maximize our platform to get the most out of it.',
+    href: '/culture-community',
+    icon: BookmarkAltIcon,
+  },
+  {
+    name: 'Risk Advisors',
+    description:
+      'See what meet-ups and other events we might be planning near you.',
+    href: '/risk-advisors',
+    icon: CalendarIcon,
+  },
+  {
+    name: 'Associations',
+    description: 'Understand how we take your privacy seriously.',
+    href: '/associations',
+    icon: ShieldCheckIcon,
+  },
+]
+const resources = [
+  {
+    name: 'Tools & Resources',
+    description:
+      'Get all of your questions answered in our forums or contact support.',
+    href: '/resources',
+    icon: SupportIcon,
+  },
+  {
+    name: 'Risk Management Center',
+    description:
+      'Learn how to maximize our platform to get the most out of it.',
+    href: '/risk-management-center',
+    icon: BookmarkAltIcon,
+  },
+  {
+    name: 'Forms',
+    description:
+      'See what meet-ups and other events we might be planning near you.',
+    href: '/forms',
+    icon: CalendarIcon,
+  },
+  {
+    name: 'Client News & Alerts',
+    description: 'Understand how we take your privacy seriously.',
+    href: '/client-news-alerts',
+    icon: ShieldCheckIcon,
+  },
+  {
+    name: 'Events & Webinars',
+    description: 'Understand how we take your privacy seriously.',
+    href: '/insurance-webinars-events',
+    icon: ShieldCheckIcon,
+  },
 ]
 
 function classNames(...classes) {
@@ -102,17 +146,19 @@ function classNames(...classes) {
 export default function Header() {
   return (
     <Popover className='relative bg-white'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6'>
+      <div className='max-w-7xl mx-auto px-4 py-2 sm:px-6'>
         <div className='flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10'>
           <div className='flex justify-start md:w-0 md:flex-1'>
-            <a href='#'>
-              <span className='sr-only'>Guardify</span>
-              <img
-                className='h-8 w-auto sm:h-10'
-                src='/images/guardify-logo.webp'
-                alt='Guardify Logo'
-              />
-            </a>
+            <Link href='/'>
+              <a>
+                <span className='sr-only'>Guardify</span>
+                <img
+                  className='h-8 w-auto sm:h-12'
+                  src='/images/guardify-logo.webp'
+                  alt='Guardify Logo'
+                />
+              </a>
+            </Link>
           </div>
           <div className='-mr-2 -my-2 lg:hidden'>
             <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
@@ -148,41 +194,20 @@ export default function Header() {
                     leaveFrom='opacity-100 translate-y-0'
                     leaveTo='opacity-0 translate-y-1'>
                     <Popover.Panel className='absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2'>
-                      <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
+                      <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden border-t-2 border-blue-600'>
                         <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                          {solutions.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
-                              <item.icon
-                                className='flex-shrink-0 h-6 w-6 text-indigo-600'
-                                aria-hidden='true'
-                              />
-                              <div className='ml-4'>
-                                <p className='text-base font-medium text-gray-900'>
-                                  {item.name}
-                                </p>
-                                <p className='mt-1 text-sm text-gray-500'>
-                                  {item.description}
-                                </p>
-                              </div>
-                            </a>
-                          ))}
-                        </div>
-                        <div className='px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8'>
-                          {callsToAction.map((item) => (
-                            <div key={item.name} className='flow-root'>
+                          {riskManagement.map((item) => (
+                            <Link key={item.name} href={item.href}>
                               <a
                                 href={item.href}
-                                className='-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100'>
-                                <item.icon
-                                  className='flex-shrink-0 h-6 w-6 text-gray-400'
-                                  aria-hidden='true'
-                                />
-                                <span className='ml-3'>{item.name}</span>
+                                className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
+                                <div className='ml-4'>
+                                  <p className='text-base font-medium text-gray-900 hover:text-blue-600'>
+                                    {item.name}
+                                  </p>
+                                </div>
                               </a>
-                            </div>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -221,7 +246,7 @@ export default function Header() {
                     <Popover.Panel className='absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0'>
                       <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                         <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                          {resources.map((item) => (
+                          {insurance.map((item) => (
                             <a
                               key={item.name}
                               href={item.href}
@@ -240,35 +265,6 @@ export default function Header() {
                               </div>
                             </a>
                           ))}
-                        </div>
-                        <div className='px-5 py-5 bg-gray-50 sm:px-8 sm:py-8'>
-                          <div>
-                            <h3 className='text-sm tracking-wide font-medium text-gray-500 uppercase'>
-                              Recent Posts
-                            </h3>
-                            <ul role='list' className='mt-4 space-y-4'>
-                              {recentPosts.map((post) => (
-                                <li
-                                  key={post.id}
-                                  className='text-base truncate'>
-                                  <a
-                                    href={post.href}
-                                    className='font-medium text-gray-900 hover:text-gray-700'>
-                                    {post.name}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div className='mt-5 text-sm'>
-                            <a
-                              href='#'
-                              className='font-medium text-indigo-600 hover:text-indigo-500'>
-                              {' '}
-                              View all posts{' '}
-                              <span aria-hidden='true'>&rarr;</span>
-                            </a>
-                          </div>
                         </div>
                       </div>
                     </Popover.Panel>
@@ -312,7 +308,7 @@ export default function Header() {
                     <Popover.Panel className='absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0'>
                       <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                         <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                          {resources.map((item) => (
+                          {about.map((item) => (
                             <a
                               key={item.name}
                               href={item.href}
@@ -331,35 +327,6 @@ export default function Header() {
                               </div>
                             </a>
                           ))}
-                        </div>
-                        <div className='px-5 py-5 bg-gray-50 sm:px-8 sm:py-8'>
-                          <div>
-                            <h3 className='text-sm tracking-wide font-medium text-gray-500 uppercase'>
-                              Recent Posts
-                            </h3>
-                            <ul role='list' className='mt-4 space-y-4'>
-                              {recentPosts.map((post) => (
-                                <li
-                                  key={post.id}
-                                  className='text-base truncate'>
-                                  <a
-                                    href={post.href}
-                                    className='font-medium text-gray-900 hover:text-gray-700'>
-                                    {post.name}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div className='mt-5 text-sm'>
-                            <a
-                              href='#'
-                              className='font-medium text-indigo-600 hover:text-indigo-500'>
-                              {' '}
-                              View all posts{' '}
-                              <span aria-hidden='true'>&rarr;</span>
-                            </a>
-                          </div>
                         </div>
                       </div>
                     </Popover.Panel>
@@ -415,35 +382,6 @@ export default function Header() {
                               </div>
                             </a>
                           ))}
-                        </div>
-                        <div className='px-5 py-5 bg-gray-50 sm:px-8 sm:py-8'>
-                          <div>
-                            <h3 className='text-sm tracking-wide font-medium text-gray-500 uppercase'>
-                              Recent Posts
-                            </h3>
-                            <ul role='list' className='mt-4 space-y-4'>
-                              {recentPosts.map((post) => (
-                                <li
-                                  key={post.id}
-                                  className='text-base truncate'>
-                                  <a
-                                    href={post.href}
-                                    className='font-medium text-gray-900 hover:text-gray-700'>
-                                    {post.name}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div className='mt-5 text-sm'>
-                            <a
-                              href='#'
-                              className='font-medium text-indigo-600 hover:text-indigo-500'>
-                              {' '}
-                              View all posts{' '}
-                              <span aria-hidden='true'>&rarr;</span>
-                            </a>
-                          </div>
                         </div>
                       </div>
                     </Popover.Panel>
@@ -508,7 +446,7 @@ export default function Header() {
               </div>
               <div className='mt-6'>
                 <nav className='grid gap-y-8'>
-                  {solutions.map((item) => (
+                  {riskManagement.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
@@ -538,7 +476,7 @@ export default function Header() {
                   className='text-base font-medium text-gray-900 hover:text-gray-700'>
                   Docs
                 </a>
-                {resources.map((item) => (
+                {insurance.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
