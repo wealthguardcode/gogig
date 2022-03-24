@@ -1,16 +1,6 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import {
-  BookmarkAltIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorClickIcon,
-  MenuIcon,
-  ShieldCheckIcon,
-  SupportIcon,
-  ViewGridIcon,
-  XIcon,
-} from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
 
@@ -40,7 +30,7 @@ export default function Header() {
                 <span className='sr-only'>Guardify</span>
                 <img
                   className='h-12 w-auto'
-                  src='/images/guardify-logo.webp'
+                  src='/images/guardify-logo.jpg'
                   alt='Guardify Logo'
                 />
               </a>
@@ -54,27 +44,27 @@ export default function Header() {
           </div>
           <Popover.Group as='nav' className='hidden lg:flex space-x-10'>
             <Link href='/'>
-              <a className='inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600'>
+              <a className='inline-flex items-center text-md font-medium text-gray-500 hover:text-blue-600'>
                 Home
               </a>
             </Link>
             <Link href='/risk-management'>
-              <a className='inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600'>
+              <a className='inline-flex items-center text-md font-medium text-gray-500 hover:text-blue-600'>
                 Risk Management
               </a>
             </Link>
             <Link href='/employee-benefits'>
-              <a className='inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600'>
+              <a className='inline-flex items-center text-md font-medium text-gray-500 hover:text-blue-600'>
                 Employee Benefits
               </a>
             </Link>
             <Link href='/personal-insurance'>
-              <a className='inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600'>
+              <a className='inline-flex items-center text-md font-medium text-gray-500 hover:text-blue-600'>
                 Personal Insurance
               </a>
             </Link>
             <Link href='/meet-your-team'>
-              <a className='inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600'>
+              <a className='inline-flex items-center text-md font-medium text-gray-500 hover:text-blue-600'>
                 Meet Your Team
               </a>
             </Link>
@@ -108,8 +98,8 @@ export default function Header() {
                       <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden border-t-2 border-blue-600'>
                         <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                           {moreContent.map((item) => (
-                            <>
-                              <Link key={item.name} href={item.href}>
+                            <div key={item.name}>
+                              <Link href={item.href}>
                                 <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
                                   <div className='ml-4'>
                                     <p className='text-base font-medium text-gray-900 hover:text-blue-600'>
@@ -118,7 +108,7 @@ export default function Header() {
                                   </div>
                                 </a>
                               </Link>
-                            </>
+                            </div>
                           ))}
                         </div>
                       </div>
@@ -148,7 +138,7 @@ export default function Header() {
                 <div>
                   <img
                     className='h-12 w-auto'
-                    src='/images/guardify-logo.webp'
+                    src='/images/guardify-logo.jpg'
                     alt='Guardify logo'
                   />
                 </div>
