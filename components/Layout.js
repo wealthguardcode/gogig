@@ -10,7 +10,7 @@ export default function Layout({ title, description, keywords, children }) {
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
         <link rel='icon' href='/favicon.ico' />
-        <link rel='stylesheet' href='https://rsms.me/inter/inter.css'></link>
+        {/* <link rel='stylesheet' href='https://rsms.me/inter/inter.css' /> */}
       </Head>
       <Header />
       <main>{children}</main>
@@ -21,7 +21,7 @@ export default function Layout({ title, description, keywords, children }) {
 }
 
 Layout.defaultProps = {
-  title: 'Guardify Insurance Group LLC',
-  description: 'BUSINESS OWNERS #1 CHOICE FOR INSURANCE',
-  keywords: 'Insurance,',
+  title: 'GoGig Insurance | Guardify Insurance Group LLC',
+  description: "Business owner's #1 choice for insurance",
+  keywords: 'GoGig Insurance, risk management, term life quote, business owner',
 }
