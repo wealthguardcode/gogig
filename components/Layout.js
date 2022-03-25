@@ -13,6 +13,10 @@ export default function Layout({ title, description, keywords, children }) {
         <link rel='icon' href='/favicon.ico' />
         {/* <link rel='stylesheet' href='https://rsms.me/inter/inter.css' /> */}
         <link
+          href='https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Serif&display=swap'
+          rel='stylesheet'
+        />
+        <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'
         />

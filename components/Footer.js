@@ -12,8 +12,8 @@ const navigation = {
   contact: [
     { name: '832-930-3827', href: 'tel:8329303827' },
     {
-      name: 'email@email.com.com',
-      href: 'mailto:email@email.com.com',
+      name: 'email@email.com',
+      href: 'mailto:email@email.com',
     },
   ],
 }

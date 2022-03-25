@@ -2,4 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: 'Noto Serif', serif;
+}
 
+.header-links {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 40rem;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+/* Media Queries */
+/* iPad Pro */
+/* Landscape */
+@media only screen and (max-width: 1366px) and (orientation: landscape) {
+  .carousel-item img {
+    height: 40rem;
+  }
+}
+
+/*Portrait*/
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .carousel-item img {
+    height: 30rem;
+  }
+}
+
+/* Landscape */
+@media only screen and (max-width: 1112px) and (orientation: landscape) {
+  .carousel-item img {
+    height: 30rem;
+  }
+}
+
+/*Portrait*/
+@media only screen and (max-width: 834px) and (orientation: portrait) {
+  .carousel-item img {
+    height: 24rem;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .carousel-item img {
+    height: 18rem;
+  }
+}
